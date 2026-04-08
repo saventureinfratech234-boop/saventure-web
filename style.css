@@ -96,6 +96,10 @@ nav ul li a:hover{color:#f9a826;}
   align-items:center;
   position:relative;
 }
+
+.hero p {
+  color: aqua;
+}
 .hero::before{
   content:"";
   position:absolute;
@@ -127,6 +131,62 @@ nav ul li a:hover{color:#f9a826;}
   color:#fff;
 }
 
+.about {
+  padding: 80px 10%;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.about-header h2 {
+  color: lightskyblue;
+  margin-bottom: 15px;
+}
+
+.about-header p {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* Cards Layout */
+.about-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+}
+
+.about-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-card h3 {
+  color: lightskyblue;
+  margin: 15px 0;
+}
+
+.about-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 /* SERVICES */
 .services{padding:80px 50px;text-align:center;}
 .cards{
@@ -148,6 +208,169 @@ nav ul li a:hover{color:#f9a826;}
 .card i{
   font-size:30px;
   color:#f9a826;
+}
+
+/* SERVICES SECTION */
+.services {
+  padding: 60px 8%;
+  background: linear-gradient(90deg, #1e5fa8, #1fa39c);
+  color: #fff;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* TABS */
+.service-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.service-tabs button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-tabs button:hover,
+.service-tabs button.active {
+  background: #ffffff;
+  color: #1e5fa8;
+}
+
+/* CONTENT */
+.service-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT */
+.service-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.service-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.service-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT IMAGE */
+.service-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.service-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .service-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* HIDE RADIO BUTTONS */
+.services input {
+  display: none;
+}
+
+/* TABS */
+.service-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.service-tabs label {
+  padding: 10px 18px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ACTIVE TAB */
+#architecture:checked ~ .service-tabs label[for="architecture"],
+#construction:checked ~ .service-tabs label[for="construction"],
+#interior:checked ~ .service-tabs label[for="interior"],
+#financial:checked ~ .service-tabs label[for="financial"],
+#infra:checked ~ .service-tabs label[for="infra"],
+#marketing:checked ~ .service-tabs label[for="marketing"],
+#import:checked ~ .service-tabs label[for="import"],
+#renovation:checked ~ .service-tabs label[for="renovation"] {
+  background: #fff;
+  color: #1e5fa8;
+}
+
+/* CONTENT */
+.service-content .content-box {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* SHOW ACTIVE CONTENT */
+#architecture:checked ~ .service-content .content-box:nth-child(1),
+#construction:checked ~ .service-content .content-box:nth-child(2),
+#interior:checked ~ .service-content .content-box:nth-child(3),
+#financial:checked ~ .service-content .content-box:nth-child(4),
+#infra:checked ~ .service-content .content-box:nth-child(5),
+#marketing:checked ~ .service-content .content-box:nth-child(6),
+#import:checked ~ .service-content .content-box:nth-child(7),
+#renovation:checked ~ .service-content .content-box:nth-child(8) {
+  display: flex;
+}
+
+/* IMAGE */
+.service-image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .service-content .content-box {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* STATS */
@@ -230,6 +453,33 @@ button{
   background:#0a0a0a;
   color:#fff;
   border:none;
+}
+
+
+.contact {
+  background-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  color: #fff;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.contact * {
+  position: relative;
+  z-index: 1;
 }
 
 /* FOOTER */
